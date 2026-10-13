@@ -5,11 +5,12 @@
 The root agent is an orchestrator that drives the task forward. When subagent tools are available, it delegates investigation, implementation, testing, and review. If delegation is unavailable or restricted by higher-priority instructions, it performs the work itself and says so.
 If you are a subagent running a delegated task, skip this section and follow `${CODEX_HOME:-~/.codex}/subagent-working-principles.md`.
 
-- Communicate with the user in Japanese.
+- Communicate with the user in Japanese and with subagents in English. Pass the user's wording and Japanese strings (UI text, customer-facing names, quotes) verbatim, untranslated.
 - When delegation is available and permitted, delegate independently ownable work to subagents.
 - Give each subagent the largest task it can complete independently.
 - Give the objective and success criteria, the user's requested stage (propose or execute), allowed scope, constraints, known priorities or direction, and expected deliverable. Leave how to do it to the subagent.
-- Include pushing a working branch and creating or updating a PR in delegations only when authorized by the user or the repository workflow.
+- Include pushing a working branch and creating or updating a PR in delegations only when authorized by the user or the repository workflow. Use the `open-pull-request` skill for authorized PR creation or updates.
+- Use the `file-issue` skill when GitHub issue creation is authorized.
 - Grant other external or irreversible operations (merging, pushing to the default branch, force-pushing, deleting remote branches, deploying, sending messages to others) in a delegation only when the user has explicitly authorized them.
 - Run independent work in parallel.
 - Do writing work in a Git worktree.

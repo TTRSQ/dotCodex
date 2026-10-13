@@ -8,18 +8,20 @@
 
 | リポジトリのパス | 反映先 | 内容 |
 |---|---|---|
-| `AGENTS.md` | `$CODEX_HOME/AGENTS.md` | 日本語での対話、委譲、判断と操作許可の分離 |
+| `AGENTS.md` | `$CODEX_HOME/AGENTS.md` | ユーザーとは日本語・エージェント間は英語、委譲、判断と操作許可の分離 |
 | `subagent-working-principles.md` | `$CODEX_HOME/subagent-working-principles.md` | 全体像からの設計、検証、報告の原則 |
 | `config.toml` | `$CODEX_HOME/config.toml` | sandbox、承認の自動レビュー、サブエージェント |
 | `rules/dotcodex.rules` | `$CODEX_HOME/rules/dotcodex.rules` | 一部の直接 push を禁止するコマンドルール |
 | `skills/self-review/` | `~/.agents/skills/self-review/` | 実装後の独立レビュー |
+| `skills/file-issue/` | `~/.agents/skills/file-issue/` | 重複調査、7分類のテンプレート、日本語の issue 作成 |
+| `skills/open-pull-request/` | `~/.agents/skills/open-pull-request/` | 日本語の PR タイトル・本文、リポジトリのテンプレート優先 |
 | `install.py` | 実行用 | 設定のマージ、退避、復元 |
 
 `CODEX_HOME` の既定値は `~/.codex`。スキルの反映先は独立しており、`CODEX_HOME` を変えても変わらない。モデル、テーマ、MCP、プラグインは各自の設定に任せる。
 
 ## セットアップ
 
-前提: Codex CLI、Git、Python 3.11 以降。PR を作る運用では `gh` も必要。
+前提: Codex CLI、Git、Python 3.11 以降。issue・PR を作る運用では `gh` も必要。
 
 ```bash
 git clone git@github.com:TTRSQ/dotCodex.git ~/git/dotCodex

@@ -59,7 +59,7 @@ Nested delegation is a problem-solving tool, not another layer of project manage
 - Delegate those outcomes instead of carrying all the work in your own context. Self-contained work that produces verbose output and can return a summary, such as broad searches, log analysis, or test runs, is a good fit.
 - Keep work local when it needs frequent back-and-forth, when its steps share significant context, or when briefing a child would cost more coordination than it saves. Match the number of children to the actual breadth of the problem; avoid fine-grained delegation.
 - Do not split tightly coupled decisions, such as a shared interface or design choice, across parallel children. Settle them first, or keep them in one child.
-- Brief each child as you were briefed: objective and success criteria, stage, allowed scope and boundary with sibling tasks, constraints, known priorities or direction, expected deliverable with verification evidence, and the context it cannot rediscover. Tell it to read this file (as an absolute path) and follow it, and say whether it should push or open a PR.
+- Brief each child as you were briefed: objective and success criteria, stage, allowed scope and boundary with sibling tasks, constraints, known priorities or direction, expected deliverable with verification evidence, and the context it cannot rediscover. Tell it to read this file (as an absolute path) and follow it, and say whether it should push or open a PR. Write the briefing in English, passing user wording and Japanese strings (UI text, customer-facing names, quotes) verbatim, untranslated.
 - Grant a child only authority you were given. Give each child that writes in parallel its own worktree.
 - You still own the delegated outcome: check each child's verification evidence, resolve conflicts between results, and verify the integrated result before reporting. Resolve a child's `Blocked: decision needed` under §1, yourself or by delegating that decision, and grant a child's `Blocked: authorization needed` only within authority you were given; pass up only what remains.
 - Apply this recursively when useful.
@@ -130,15 +130,16 @@ Unless the delegation names an existing branch, worktree, or PR:
 2. Create a branch from `origin/<default-branch>`.
 3. Create a worktree at `$WORKTREE_BASE_DIR/<repo-name>/<branch-or-task-name>/` (`$WORKTREE_BASE_DIR` defaults to `~/git/wt`).
 4. Implement and verify the change there.
-5. Push the branch and open a PR when the delegation or user explicitly authorizes that workflow; otherwise report the local branch and verification results.
+5. Push the branch and open a PR with the `open-pull-request` skill when the delegation or user explicitly authorizes that workflow; otherwise report the local branch and verification results.
 
 - Keep one coherent concern per PR.
+- File GitHub issues with the `file-issue` skill when the delegation or user explicitly authorizes issue creation.
 - Never write in a worktree assigned to another task.
 - Remove worktrees with `git worktree remove <path>` when cleanup is authorized; do not use `rm -rf`.
 
 ## 9. Report to the Parent Agent
 
-Finish with a concise report containing:
+Finish with a concise report in English containing:
 
 - Result: what was achieved, `Blocked: decision needed`, `Blocked: authorization needed`, or why it failed.
 - Changes: files, branch, worktree path, commits, and PR URL.
