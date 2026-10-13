@@ -1,0 +1,19 @@
+# 個人のモデル・MCP・プラグイン設定は指定しない。
+approval_policy = "on-request"
+approvals_reviewer = "auto_review"
+sandbox_mode = "workspace-write"
+
+[features]
+multi_agent = true
+
+[sandbox_workspace_write]
+writable_roots = ["~/git/wt"]
+network_access = false
+
+[auto_review]
+extra_policy = """
+Feature branches and pull requests are expected only when the user or repository workflow authorizes them.
+Never push directly to main, master, or the remote default branch; use an explicit feature-branch destination.
+Merging, force-pushing, deleting remote branches, deploying, and sending messages require explicit user authorization.
+Do not read secret files or credential stores without a necessary, explicitly authorized scope.
+"""
