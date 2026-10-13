@@ -11,6 +11,10 @@
 !skills/
 !skills/self-review/
 !skills/self-review/**
+!skills/file-issue/
+!skills/file-issue/**
+!skills/open-pull-request/
+!skills/open-pull-request/**
 !tests/
 !tests/**
 __pycache__/
