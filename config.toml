@@ -6,6 +6,9 @@ sandbox_mode = "workspace-write"
 [features]
 multi_agent = true
 
+[agents]
+max_concurrent_threads_per_session = 10
+
 [sandbox_workspace_write]
 writable_roots = ["~/git/wt"]
 network_access = false
