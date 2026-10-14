@@ -19,6 +19,8 @@
 
 `CODEX_HOME` の既定値は `~/.codex`。スキルの反映先は独立しており、`CODEX_HOME` を変えても変わらない。モデル、テーマ、MCP、プラグインは各自の設定に任せる。
 
+`agents.max_concurrent_threads_per_session = 10` で、ルートを除くサブエージェントの同時実行上限を 10 にする（ルートを含めると最大 11）。設定の意味は[公式のサブエージェント設定](https://learn.chatgpt.com/docs/agent-configuration/subagents)を参照。
+
 ## セットアップ
 
 前提: Codex CLI、Git、Python 3.11 以降。issue・PR を作る運用では `gh` も必要。
